@@ -9,6 +9,14 @@ import {
   FaGithub,
   FaLinkedin,
 } from 'react-icons/fa';
+import { BiLogoGmail } from 'react-icons/bi';
+import {
+  Card,
+  CardContent,
+} from '@/components/ui/card';
+import projectImg1 from '@/public/images/1.png';
+import projectImg2 from '@/public/images/2.jpg';
+import projectImg3 from '@/public/images/3.png';
 
 export default function Home() {
   return (
@@ -49,6 +57,10 @@ export default function Home() {
               </p>
               <p className="text-gray-600 dark:text-gray-400">
                 Orange County, CA
+              </p>
+              <p className="text-gray-600 dark:text-gray-400">
+                University of Irvine, Class of
+                2017
               </p>
             </motion.div>
 
@@ -104,23 +116,292 @@ export default function Home() {
               >
                 <FaLinkedin className="w-6 h-6" />
               </Link>
+
+              <a
+                href="mailto:srobinsons1995@gmail.com"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              >
+                <BiLogoGmail className="w-6 h-6" />
+              </a>
             </motion.div>
           </section>
 
+          {/* Work Experience */}
           <motion.section
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-              Experience
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Work Experience
             </h2>
 
-            <div className="space-y-8">
-              <div className="flex items-center justify-between"></div>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    March, 2021 - Present
+                  </p>
+                  <p className="font-medium">
+                    Software Engineer II
+                  </p>
+                  <p className="text-blue-600 dark:text-blue-400">
+                    Mint Mobile | Ultra Mobile
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                As a Software Engineer II on the
+                eCommerce platform team, I built
+                and optimized customer-facing
+                features like product browsing,
+                checkout, and order tracking using
+                modern web technologies. I also
+                collaborated with cross-functional
+                teams to integrate APIs, improve
+                site performance, and ensure a
+                seamless and responsive user
+                experience.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    March, 2021 - Present
+                  </p>
+                  <p className="font-medium">
+                    Software Engineer II
+                  </p>
+                  <p className="text-blue-600 dark:text-blue-400">
+                    Mint Mobile | Ultra Mobile
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                As a Software Engineer II on the
+                eCommerce platform team, I built
+                and optimized customer-facing
+                features like product browsing,
+                checkout, and order tracking using
+                modern web technologies. I also
+                collaborated with cross-functional
+                teams to integrate APIs, improve
+                site performance, and ensure a
+                seamless and responsive user
+                experience.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <div className="space-y-1">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    March, 2021 - Present
+                  </p>
+                  <p className="font-medium">
+                    Software Engineer II
+                  </p>
+                  <p className="text-blue-600 dark:text-blue-400">
+                    Mint Mobile | Ultra Mobile
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                As a Software Engineer II on the
+                eCommerce platform team, I built
+                and optimized customer-facing
+                features like product browsing,
+                checkout, and order tracking using
+                modern web technologies. I also
+                collaborated with cross-functional
+                teams to integrate APIs, improve
+                site performance, and ensure a
+                seamless and responsive user
+                experience.
+              </p>
             </div>
           </motion.section>
+
+          {/* Projects */}
+          <motion.section
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Personal Projects
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <Card className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default">
+                <CardContent className="p-4">
+                  <Image
+                    src={projectImg1}
+                    alt="Project 1"
+                    className="rounded-lg mb-4"
+                  />
+
+                  <div>
+                    <h3 className="font-medium text-lg">
+                      Project Name
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Next.js, Tailwind
+                    </p>
+
+                    <div className="flex gap-3 mt-2">
+                      {/* Live Demo CTA */}
+                      <a
+                        href="https://your-live-link.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:opacity-90 cursor-pointer"
+                        >
+                          Live Demo
+                        </Button>
+                      </a>
+
+                      {/* GitHub CTA */}
+                      <a
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800"
+                        >
+                          GitHub
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default">
+                <CardContent className="p-4">
+                  <Image
+                    src={projectImg2}
+                    alt="Project 2"
+                    className="rounded-lg mb-4"
+                  />
+
+                  <div>
+                    <h3 className="font-medium text-lg">
+                      Project Name
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Next.js, Tailwind
+                    </p>
+
+                    <div className="flex gap-3 mt-2">
+                      {/* Live Demo CTA */}
+                      <a
+                        href="https://your-live-link.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:opacity-90 cursor-pointer"
+                        >
+                          Live Demo
+                        </Button>
+                      </a>
+
+                      {/* GitHub CTA */}
+                      <a
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800"
+                        >
+                          GitHub
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default">
+                <CardContent className="p-4">
+                  <Image
+                    src={projectImg3}
+                    alt="Project 3"
+                    className="rounded-lg mb-4"
+                  />
+
+                  <div>
+                    <h3 className="font-medium text-lg">
+                      Project Name
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      Next.js, Tailwind
+                    </p>
+
+                    <div className="flex gap-3 mt-2">
+                      {/* Live Demo CTA */}
+                      <a
+                        href="https://your-live-link.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-violet-600 to-purple-600 text-white hover:opacity-90 cursor-pointer"
+                        >
+                          Live Demo
+                        </Button>
+                      </a>
+
+                      {/* GitHub CTA */}
+                      <a
+                        href="https://github.com/your-repo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer"
+                      >
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800"
+                        >
+                          GitHub
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.section>
+
+          <p className="text-gray-500 text-center pt-8">
+            © {new Date().getFullYear()} Sean
+            Robinson
+          </p>
         </main>
       </div>
     </div>

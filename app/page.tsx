@@ -239,6 +239,7 @@ export default function Home() {
               Personal Projects
             </h2>
 
+            {/* Project Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <Card className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default">
                 <CardContent className="p-4">

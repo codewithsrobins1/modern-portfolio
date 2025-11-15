@@ -76,8 +76,8 @@ export default function Home() {
         </motion.header>
 
         <main className="space-y-10">
+          {/* Name, Job Title, Location */}
           <section className="space-y-10">
-            {/* Name, Job Title, Location */}
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -105,6 +105,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-3"
+              id="about"
             >
               <h2 className="text-lg font-semibold">
                 {about?.title ??
@@ -125,19 +126,25 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="flex items-center gap-3"
             >
-              <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105 cursor-pointer">
-                Resume
-              </Button>
+              <a
+                href="https://drive.google.com/file/d/1MnEE_EaGsSjylbFXGfnb7r41Os_uxe8V/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105 cursor-pointer">
+                  Resume
+                </Button>
+              </a>
 
               <Link
-                href="#"
+                href="https://github.com/codewithsrobins1"
                 className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
               >
                 <FaGithub className="w-6 h-6" />
               </Link>
 
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/srobins1/"
                 className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
               >
                 <FaLinkedin className="w-6 h-6" />
@@ -158,6 +165,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
+            id="work"
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
               Work Experience
@@ -174,6 +182,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
+            id="projects"
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
               Personal Projects

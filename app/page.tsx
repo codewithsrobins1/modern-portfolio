@@ -12,7 +12,6 @@ import type {
 } from '@/lib/types/sanityTypes';
 import Image from 'next/image';
 import profilePic from '@/public/images/pp.jpg';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -55,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+    <div className="mt-5 min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <div className="mx-auto max-w-xl px-4 py-20">
         {/* Profile Picture and Theme Toggle */}
         <motion.header
@@ -71,8 +70,6 @@ export default function Home() {
               className="cursor-pointer transition-all duration-300 hover:scale-110"
             ></Image>
           </div>
-
-          <ThemeToggle />
         </motion.header>
 
         <main className="space-y-10">

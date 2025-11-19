@@ -18,25 +18,30 @@ export const Projects = ({
       {projects.map((project) => (
         <Card
           key={project._id}
-          className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default"
+          className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-default h-full"
         >
-          <CardContent className="p-4">
-            <Image
-              src={project.imageUrl}
-              alt={project.name}
-              width={600}
-              height={400}
-              className="rounded-lg mb-4"
-            />
+          <CardContent className="p-4 h-full flex flex-col">
+            {/* Fixed-ratio image area so all cards line up */}
+            <div className="relative w-full aspect-[16/9] mb-4">
+              <Image
+                src={project.imageUrl}
+                alt={project.name}
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
 
-            <div>
-              <h3 className="font-medium text-lg">
-                {project.name}
-              </h3>
+            {/* Content fills the remaining space */}
+            <div className="flex flex-col flex-1 justify-between">
+              <div>
+                <h3 className="font-medium text-lg">
+                  {project.name}
+                </h3>
 
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                {project.tech}
-              </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  {project.tech}
+                </p>
+              </div>
 
               <div className="flex gap-3 mt-2">
                 {/* Live Demo */}

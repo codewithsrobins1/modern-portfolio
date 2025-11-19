@@ -67,7 +67,7 @@ export default function Home() {
             <Image
               src={profilePic}
               alt="profile picture"
-              className="cursor-pointer transition-all duration-300 hover:scale-110"
+              className="transition-all duration-300 hover:scale-110"
             ></Image>
           </div>
         </motion.header>
@@ -124,7 +124,7 @@ export default function Home() {
               className="flex items-center gap-3"
             >
               <a
-                href="https://drive.google.com/file/d/1MnEE_EaGsSjylbFXGfnb7r41Os_uxe8V/view?usp=drive_link"
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

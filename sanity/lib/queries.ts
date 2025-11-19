@@ -4,7 +4,7 @@ export const ABOUT_QUERY = `*[_type == "about"][0]{
   paragraphTwo
 }`;
 
-export const WORK_EXPERIENCE_QUERY = `*[_type == "workExperience"] | order(startDate desc){
+export const WORK_EXPERIENCE_QUERY = `*[_type == "workExperience"] | order(sortOrder asc){
   _id,
   company,
   title,

@@ -32,6 +32,13 @@ export default defineType({
       initialValue: true,
     }),
     defineField({
+      name: 'sortOrder',
+      title: 'Sort Order',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+      description: 'Lower numbers appear first',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',

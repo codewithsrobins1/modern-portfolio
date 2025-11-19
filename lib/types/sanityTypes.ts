@@ -11,6 +11,7 @@ export type WorkExperience = {
   startDate: string;
   endDate?: string;
   isCurrent?: boolean;
+  sortOrder: number;
   description: string;
 };
 

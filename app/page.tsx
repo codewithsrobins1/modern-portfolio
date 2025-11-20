@@ -116,7 +116,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Resume CTA + Social Links */}
+            {/* Resume CTA + CMS Social Links */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

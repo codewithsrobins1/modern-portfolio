@@ -86,6 +86,7 @@ export default function Home() {
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
                 Current Role: Software Engineer II
+                @ Mint Mobile | Ultra Mobile
               </p>
               <p className="text-gray-600 dark:text-gray-400">
                 Orange County, CA

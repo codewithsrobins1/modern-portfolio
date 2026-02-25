@@ -38,10 +38,22 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       description: 'Lower numbers appear first',
     }),
+    // ✅ NEW: Bullet point list — use this instead of "description" for the new design
+    defineField({
+      name: 'points',
+      title: 'Bullet Points',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description:
+        'Each item becomes one bullet point under this role. This replaces the old "description" field.',
+    }),
+    // ⚠️ Legacy field — kept for backwards compatibility, can be removed once you've migrated data
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Description (Legacy)',
       type: 'text',
+      description:
+        'Old single-text description. Kept for fallback — prefer using "Bullet Points" above.',
     }),
   ],
 });

@@ -12,7 +12,8 @@ export type WorkExperience = {
   endDate?: string;
   isCurrent?: boolean;
   sortOrder: number;
-  description: string;
+  points?: string[];       // New bullet-point array
+  description?: string;    // Legacy fallback
 };
 
 export type Project = {

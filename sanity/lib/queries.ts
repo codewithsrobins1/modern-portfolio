@@ -11,6 +11,7 @@ export const WORK_EXPERIENCE_QUERY = `*[_type == "workExperience"] | order(sortO
   startDate,
   endDate,
   isCurrent,
+  points,
   description
 }`;
 

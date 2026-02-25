@@ -1,36 +1,51 @@
 'use client';
 
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+} from 'framer-motion';
 import type { WorkExperience } from '@/lib/types/sanityTypes';
 
-const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
+const easeOut: [number, number, number, number] =
+  [0.16, 1, 0.3, 1];
 
 interface WorkExperienceProps {
   experiences: WorkExperience[];
 }
 
-function WorkItem({ exp }: { exp: WorkExperience }) {
+function WorkItem({
+  exp,
+}: {
+  exp: WorkExperience;
+}) {
   const [open, setOpen] = useState(true);
 
-  const start = new Date(exp.startDate).toLocaleDateString('en-US', {
+  const start = new Date(
+    exp.startDate
+  ).toLocaleDateString('en-US', {
     month: 'short',
     year: 'numeric',
   });
   const end =
     exp.isCurrent || !exp.endDate
       ? 'Present'
-      : new Date(exp.endDate).toLocaleDateString('en-US', {
-          month: 'short',
-          year: 'numeric',
-        });
+      : new Date(exp.endDate).toLocaleDateString(
+          'en-US',
+          {
+            month: 'short',
+            year: 'numeric',
+          }
+        );
 
   // Support both bullet points array and legacy description string
   const bulletPoints: string[] =
     exp.points && exp.points.length > 0
       ? exp.points
       : exp.description
-        ? exp.description.split('\n').filter((s) => s.trim().length > 0)
+        ? exp.description
+            .split('\n')
+            .filter((s) => s.trim().length > 0)
         : [];
 
   return (
@@ -43,11 +58,13 @@ function WorkItem({ exp }: { exp: WorkExperience }) {
           <p className="mt-1 text-lg font-semibold text-zinc-900 dark:text-white">
             {exp.title}
           </p>
-          <p className="text-sm text-blue-600 dark:text-white/70">{exp.company}</p>
+          <p className="text-sm text-blue-600 dark:text-white/70">
+            {exp.company}
+          </p>
         </div>
         <button
           onClick={() => setOpen((v) => !v)}
-          className="shrink-0 rounded-full px-3 py-1 text-xs ring-1 ring-black/10 dark:ring-white/10 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-white/70 hover:bg-black/10 dark:hover:bg-white/10 transition"
+          className="cursor-pointer shrink-0 rounded-full px-3 py-1 text-xs ring-1 ring-black/10 dark:ring-white/10 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-white/70 hover:bg-black/10 dark:hover:bg-white/10 transition"
         >
           {open ? 'Hide' : 'Details'}
         </button>
@@ -58,9 +75,15 @@ function WorkItem({ exp }: { exp: WorkExperience }) {
           <motion.div
             key="details"
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{
+              opacity: 1,
+              height: 'auto',
+            }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: easeOut }}
+            transition={{
+              duration: 0.35,
+              ease: easeOut,
+            }}
             className="overflow-hidden"
           >
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-600 dark:text-white/70">
@@ -75,7 +98,9 @@ function WorkItem({ exp }: { exp: WorkExperience }) {
   );
 }
 
-export const WorkExperienceSection = ({ experiences }: WorkExperienceProps) => {
+export const WorkExperienceSection = ({
+  experiences,
+}: WorkExperienceProps) => {
   return (
     <div className="space-y-4">
       {experiences.map((exp) => (
